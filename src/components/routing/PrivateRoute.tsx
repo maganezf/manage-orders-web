@@ -10,7 +10,7 @@ export const PrivateRoute = ({ page }: PrivateRouteProps) => {
   const navigate = useNavigate();
 
   if (!isAuthenticated) {
-    navigate('/');
+    navigate('/login');
     return null;
   }
 

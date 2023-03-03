@@ -65,13 +65,7 @@ module.exports = {
         },
       },
     ],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        // devDependencies: ['**/*.test.js', '**/*.spec.js'],  // allow imports of devDependencies in test files only
-        devDependencies: true,
-      },
-    ],
+    'import/no-extraneous-dependencies': 'off',
     'prettier/prettier': 'off',
     'react/style-prop-object': 'off',
     'react/jsx-filename-extension': [

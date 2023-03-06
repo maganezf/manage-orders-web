@@ -30,6 +30,18 @@ export const GlobalStyles = createGlobalStyle`${css`
     font-size: 62.5%; // 10px based
   }
 
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--red);
+  }
+
   body {
     background: var(--white);
     font-size: 1.6rem;

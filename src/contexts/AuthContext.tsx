@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
+import type { Waiter } from '@types';
 import {
   Dispatch,
   ReactNode,
@@ -15,13 +16,6 @@ interface AuthContextData {
   setWaiter: Dispatch<SetStateAction<Waiter | null>>;
 }
 
-export type Waiter = {
-  id: string;
-  name: string;
-  username: string;
-  password: string;
-};
-
 const AuthContext = createContext({} as AuthContextData);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -30,7 +24,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     //   return Boolean(localStorage.getItem('isAuthenticated'));
     // }
     // return false;
-    return false;
+    return true;
   });
 
   const [waiter, setWaiter] = useState<Waiter | null>(null);

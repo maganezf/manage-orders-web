@@ -3,18 +3,21 @@ import { ReactNode } from 'react';
 
 import * as S from './styles';
 
-export type Direction = 'row' | 'column';
+type Direction = 'row' | 'column';
 
-interface LayoutProps {
+export interface LayoutProps {
   children: ReactNode;
   dir?: Direction;
+  gap?: string;
 }
 
-export const Layout = ({ children, dir = 'row' }: LayoutProps) => {
+export const Layout = ({ children, dir = 'row', gap }: LayoutProps) => {
   return (
     <S.Wrapper>
       <Header />
-      <S.Content dir={dir}>{children}</S.Content>
+      <S.Content dir={dir} gap={gap}>
+        {children}
+      </S.Content>
     </S.Wrapper>
   );
 };

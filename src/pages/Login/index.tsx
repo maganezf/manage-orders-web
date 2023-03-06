@@ -1,6 +1,6 @@
+import type { Waiter } from '@types';
 import logo from 'assets/icons/logo.svg';
 import { AxiosError } from 'axios';
-import type { Waiter } from 'contexts/AuthContext';
 import { useAuthContext } from 'contexts/AuthContext';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -74,13 +74,13 @@ export const Login = () => {
         </S.InputsWrapper>
 
         <S.SignUpInfo className="body-text-sm">
-          Don’t have an account?
+          Não tem uma conta?
           <button
             type="submit"
             className="outline"
             onClick={() => navigate('/signup')}
           >
-            SignUp
+            Criar conta
           </button>
         </S.SignUpInfo>
       </S.Form>

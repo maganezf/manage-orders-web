@@ -85,7 +85,9 @@ export const SignUp = () => {
           alt="manage orders logo"
         />
 
-        <p className="body-text-lg">O App do garçom</p>
+        <p className="body-text-lg">
+          Organizando os pedidos do seu restaurante
+        </p>
       </S.ImageWrapper>
     </S.Wrapper>
   );

@@ -9,6 +9,7 @@ export const Wrapper = styled.main`
 
 export const Content = styled.section<Omit<LayoutProps, 'children'>>`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: ${({ dir }) => dir};
 
   justify-content: center;

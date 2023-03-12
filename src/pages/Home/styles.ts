@@ -7,7 +7,7 @@ export const Card = styled.div`
   padding: 1.6rem;
   gap: 2.4rem;
 
-  min-width: 38.4rem;
+  width: 38.5rem;
   min-height: 22rem;
   max-height: 55rem;
 
@@ -30,6 +30,7 @@ export const CardTitle = styled.div`
 
   .title {
     font-style: normal;
+    font-weight: 700;
     font-size: 1.4rem;
     font-weight: 600;
     line-height: 150%;
@@ -43,6 +44,7 @@ export const CardContent = styled.div`
   flex-direction: column;
   gap: 2rem;
   overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 export const CardItem = styled.div`
@@ -52,10 +54,11 @@ export const CardItem = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding: 4rem 0;
-  gap: 0.8rem;
+  padding: 4rem;
+  gap: 1.5rem;
 
-  height: 12.8rem;
+  width: 35rem;
+  min-height: 15rem;
 
   background: var(--white);
   border: 1px solid rgba(204, 204, 204, 0.4);
@@ -77,5 +80,37 @@ export const CardItem = styled.div`
     line-height: 150%;
 
     color: var(--gray-400);
+  }
+`;
+
+export const CardItems = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.8rem;
+`;
+
+export const DateInfo = styled.p`
+  margin-left: auto;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 130%;
+
+  color: var(--gray-400);
+`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+
+  button {
+    background-color: transparent;
   }
 `;

@@ -21,7 +21,9 @@ export const Header = () => {
             <strong>Manage</strong> Orders
           </h5>
 
-          <p className="body-text-md">O App do Garçom</p>
+          <p className="body-text-md">
+            Organizando os pedidos do seu restaurante
+          </p>
         </S.Description>
       </S.RightContent>
     </S.Wrapper>

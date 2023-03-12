@@ -1,3 +1,5 @@
+export type Status = 'WAITING' | 'IN_PRODUCTION' | 'DONE';
+
 export type Category = {
   id: string;
   name: string;
@@ -23,7 +25,7 @@ export type Waiter = {
 export type Order = {
   id: string;
   table: number;
-  status: 'WAITING' | 'IN_PRODUCTION' | 'DONE';
+  status: Status;
   createdAt: string;
   products: Product[];
   waiter: Waiter;

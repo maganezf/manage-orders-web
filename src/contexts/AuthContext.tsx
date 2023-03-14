@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-constructed-context-values */
-import type { Waiter } from '@types';
 import {
   Dispatch,
   ReactNode,
@@ -12,27 +10,17 @@ import {
 interface AuthContextData {
   isAuthenticated: boolean;
   setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
-  waiter: Waiter | null;
-  setWaiter: Dispatch<SetStateAction<Waiter | null>>;
 }
 
 const AuthContext = createContext({} as AuthContextData);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
-    // if (localStorage.getItem('isAuthenticated')) {
-    //   return Boolean(localStorage.getItem('isAuthenticated'));
-    // }
-    // return false;
-    return true;
-  });
-
-  const [waiter, setWaiter] = useState<Waiter | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
+    !!localStorage.getItem('token')
+  );
 
   return (
-    <AuthContext.Provider
-      value={{ isAuthenticated, setIsAuthenticated, waiter, setWaiter }}
-    >
+    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );

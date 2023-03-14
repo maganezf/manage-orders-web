@@ -24,6 +24,10 @@ export const Form = styled.form`
   min-width: 25rem;
 `;
 
+export const Title = styled.h2`
+  color: var(--red-dark);
+`;
+
 export const InputsWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,7 +36,6 @@ export const InputsWrapper = styled.div`
 `;
 
 export const SignUpInfo = styled.p`
-  margin-bottom: 5.5rem;
   color: var(--gray-500);
 
   display: flex;

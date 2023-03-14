@@ -17,9 +17,7 @@ export const Header = () => {
         />
 
         <S.Description>
-          <h5>
-            <strong>Manage</strong> Orders
-          </h5>
+          <h5>Manage Orders</h5>
 
           <p className="body-text-md">
             Organizando os pedidos do seu restaurante

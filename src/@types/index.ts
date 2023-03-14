@@ -1,3 +1,8 @@
+export type ApiResponse<T = undefined> = {
+  message: string;
+  data: T;
+};
+
 export type Status = 'WAITING' | 'IN_PRODUCTION' | 'DONE';
 
 export type Category = {

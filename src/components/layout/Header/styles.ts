@@ -34,6 +34,6 @@ export const Description = styled.div`
   gap: 0.6rem;
 
   h5 {
-    text-transform: uppercase;
+    font-weight: 700;
   }
 `;

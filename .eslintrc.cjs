@@ -42,7 +42,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-shadow': 'off',
     'no-console': 'warn',
-    'no-alert': 'warn',
+    'no-alert': 'off',
     'no-useless-constructor': 'warn',
     'no-empty-function': 'error',
     'lines-between-class-members': 'off',
@@ -91,6 +91,9 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'react/jsx-no-constructed-context-values': 'off',
+    'no-param-reassign': 'off',
+    'no-useless-return': 'off',
   },
   settings: {
     'import/resolver': {

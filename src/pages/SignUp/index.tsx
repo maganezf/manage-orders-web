@@ -1,12 +1,11 @@
 import type { Waiter } from '@types';
 import logo from 'assets/icons/logo.svg';
-import { AxiosError } from 'axios';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { api } from 'services/api';
 
-import * as S from './styles';
+import * as S from '../Login/styles';
 
 export const SignUp = () => {
   const navigate = useNavigate();
@@ -34,21 +33,18 @@ export const SignUp = () => {
     }
 
     try {
-      const { data, status } = await api.post<Waiter>(
-        '/waiters/create',
-        values
-      );
-
+      const { status } = await api.post<Waiter>('/waiters/create', values);
       if ([200, 201].includes(status)) navigate('/login');
-    } catch (err) {
-      const error = err as AxiosError;
-      console.log(error.message);
+    } catch (error) {
+      return;
     }
   };
 
   return (
     <S.Wrapper>
       <S.Form onSubmit={handleSubmit}>
+        <S.Title>Manage Orders</S.Title>
+
         <S.InputsWrapper>
           <input
             placeholder="Nome do garçom"
@@ -58,7 +54,7 @@ export const SignUp = () => {
           />
 
           <input
-            placeholder="Nome para login"
+            placeholder="Nome do usuário"
             name="username"
             type="text"
             onChange={handleChange}

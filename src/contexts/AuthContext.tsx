@@ -1,3 +1,4 @@
+import type { Order } from '@types';
 import {
   Dispatch,
   ReactNode,
@@ -6,6 +7,11 @@ import {
   useContext,
   useState,
 } from 'react';
+
+export type Waiter = Omit<Order, 'id' | 'waiter'> & {
+  username: string;
+  password: string;
+};
 
 interface AuthContextData {
   isAuthenticated: boolean;

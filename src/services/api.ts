@@ -22,8 +22,13 @@ api.interceptors.response.use(
     return response;
   },
   async (error: AxiosError<{ statusCode: number; message: string }>) => {
-    if (error.response?.status === 401) localStorage.removeItem('token');
-    toast.error(error.response?.data.message);
+    if (error.response) {
+      if ([401, 403].includes(error.response?.status)) {
+        localStorage.removeItem('token');
+      }
+      toast.error(error.response?.data.message);
+    }
+
     return Promise.reject(error);
   }
 );

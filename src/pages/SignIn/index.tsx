@@ -1,4 +1,4 @@
-import type { ApiResponse } from '@types';
+import type { ApiResponse, SignInWaiter } from '@types';
 import logo from 'assets/icons/logo.svg';
 import { useAuthContext } from 'contexts/AuthContext';
 import { ChangeEvent, FormEvent, useState } from 'react';
@@ -8,11 +8,11 @@ import { api } from 'services/api';
 
 import * as S from './styles';
 
-export const Login = () => {
+export const SignIn = () => {
   const { setIsAuthenticated } = useAuthContext();
   const navigate = useNavigate();
 
-  const [values, setValues] = useState({
+  const [values, setValues] = useState<SignInWaiter>({
     username: '',
     password: '',
   });
@@ -81,7 +81,7 @@ export const Login = () => {
           <button
             type="submit"
             className="outline"
-            onClick={() => navigate('/signup')}
+            onClick={() => navigate('/sign-up')}
           >
             Criar conta
           </button>

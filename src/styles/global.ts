@@ -100,7 +100,8 @@ export const GlobalStyles = createGlobalStyle`${css`
     gap: 0.8rem;
   }
 
-  input {
+  input,
+  select {
     display: flex;
     align-items: center;
     justify-content: flex-start;

@@ -1,4 +1,5 @@
 import { useAuthContext } from 'contexts/AuthContext';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface PrivateRouteProps {
@@ -9,10 +10,9 @@ export const PrivateRoute = ({ page }: PrivateRouteProps) => {
   const { isAuthenticated } = useAuthContext();
   const navigate = useNavigate();
 
-  if (!isAuthenticated) {
-    navigate('/login');
-    return null;
-  }
+  useEffect(() => {
+    if (!isAuthenticated) navigate('/sign-in');
+  }, [isAuthenticated]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return page;
+  return isAuthenticated ? page : null;
 };

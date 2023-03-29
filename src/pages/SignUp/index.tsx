@@ -1,17 +1,16 @@
-import type { Waiter } from '@types';
+import type { SignInWaiter, Waiter } from '@types';
 import logo from 'assets/icons/logo.svg';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { api } from 'services/api';
 
-import * as S from '../Login/styles';
+import * as S from '../SignIn/styles';
 
 export const SignUp = () => {
   const navigate = useNavigate();
 
-  const [values, setValues] = useState({
-    name: '',
+  const [values, setValues] = useState<SignInWaiter>({
     username: '',
     password: '',
   });
@@ -34,7 +33,7 @@ export const SignUp = () => {
 
     try {
       const { status } = await api.post<Waiter>('/waiters/create', values);
-      if ([200, 201].includes(status)) navigate('/login');
+      if ([200, 201].includes(status)) navigate('/sign-in');
     } catch (error) {
       return;
     }
@@ -46,13 +45,6 @@ export const SignUp = () => {
         <S.Title>Manage Orders</S.Title>
 
         <S.InputsWrapper>
-          <input
-            placeholder="Nome do garçom"
-            name="name"
-            type="text"
-            onChange={handleChange}
-          />
-
           <input
             placeholder="Nome do usuário"
             name="username"

@@ -11,6 +11,8 @@ export type Category = {
   description: string;
 };
 
+export type CreateCategory = Omit<Category, 'id'>;
+
 export type Product = {
   id: string;
   name: string;
@@ -20,12 +22,15 @@ export type Product = {
   category: Category;
 };
 
+export type CreateProduct = Omit<Product, 'id'>;
+
 export type Waiter = {
   id: string;
-  name: string;
   username: string;
   password: string;
 };
+
+export type SignInWaiter = Omit<Waiter, 'id'>;
 
 export type Order = {
   id: string;
@@ -33,6 +38,7 @@ export type Order = {
   status: Status;
   createdAt: string;
   products: Product[];
-  waiter: Waiter;
   customerName: string;
 };
+
+export type CreateOrder = Omit<Order, 'id' | 'waiter'>;

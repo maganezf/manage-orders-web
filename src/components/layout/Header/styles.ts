@@ -37,3 +37,17 @@ export const Description = styled.div`
     font-weight: 700;
   }
 `;
+
+export const IconsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  margin-left: auto;
+
+  svg {
+    cursor: pointer;
+  }
+`;

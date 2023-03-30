@@ -13,6 +13,7 @@ Filho</a></sub>
 - [Purpose and Features](#dart-purpose-and-features)
 - [Explanation about the project /src folders environment](#spiral_note_pad-Brief-explanation-about-the-project-/src-folders-environment)
 - [Node, React and Vite versions](#construction_worker-node-react-and-vite-versions)
+- [Setup before run](#construction_worker-setup-before-run)
 - [How to Run](#construction_worker-how-to-run)
 - [How to use Commitizen](#construction_worker-how-to-use-commitizen)
 - [Found a bug? Missing a specific feature?](#bug-issues)
@@ -62,6 +63,13 @@ This project was created using theses versions:
  - Node.js (installed version on the machine): 18.13.0
  - React.js: 18.2.0
  - Vite.js: 3.2.3
+```
+
+## :construction_worker: Setup before run
+
+```shell
+1. Set up your environment variables ('.env' file) based on the '.env.example' file
+2. Now you can run your client application
 ```
 
 ## :construction_worker: How to Run

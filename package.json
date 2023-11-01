@@ -9,7 +9,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint 'src/**/*.tsx' --fix"
+    "lint": "eslint 'src/**/*.tsx' --fix",
+    "e2e:install-deps": "playwright install-deps",
+    "e2e": "playwright test",
+    "e2e:headed": "playwright test --headed",
+    "e2e:ui": "playwright test --ui",
+    "e2e:debug": "playwright test --debug",
+    "e2e:report": "playwright show-report"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.5",
@@ -23,6 +29,8 @@
     "vite-tsconfig-paths": "^4.0.5"
   },
   "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.9",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.26",
